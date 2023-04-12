@@ -4,6 +4,20 @@
   "base": "main",
   "rules": [
     {
+      "name": "Design Tokens / Colors (CSS)",
+      "path": "./output/styles/colors.css",
+      "filter": {
+        "types": [
+          "color"
+        ]
+      },
+      "parsers": [
+        {
+          "name": "to-css-custom-properties"
+        }
+      ]
+    },
+    {
       "name": "Design Tokens / Theme",
       "path": "./output/styles/theme.js",
       "filter": {
