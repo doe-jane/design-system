@@ -24,6 +24,9 @@
           "name": "to-css-custom-properties",
           "options": {
             "formatName": "kebabCase"
+            "formatTokens": {
+              "color": "hex6"
+            }
           }
         }
       ]
