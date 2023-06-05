@@ -8,7 +8,8 @@
       "path": "./output/styles/colors.css",
       "filter": {
         "types": [
-          "color"
+          "color",
+          "measuremeht"
         ]
       },
       "parsers": [
