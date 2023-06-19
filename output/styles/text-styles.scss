@@ -19,6 +19,13 @@
   line-height: 1.43;
 }
 
+@mixin code {
+  font-family: FiraCode-Regular, serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.1;
+}
+
 @mixin heading-1 {
   font-family: Inter-SemiBold, serif;
   font-weight: 600;
