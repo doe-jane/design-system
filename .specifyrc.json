@@ -71,8 +71,7 @@
             "formats": [
               "woff2",
               "woff"
-            ],
-            "fontsPath": "../assets/fonts"
+            ]
           }
         }
       ]
