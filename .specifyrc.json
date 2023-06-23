@@ -67,8 +67,7 @@
             "formats": [
               "woff",
               "woff2"
-            ],
-            "fontsPath": "../fonts"
+            ]
           }
         }
       ]
