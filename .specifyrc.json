@@ -1,5 +1,5 @@
 {
-  "repository": "@acme-inc/Test",
+  "repository": "@acme-inc/all-design-data",
   "head": "specifyrc-json",
   "base": "main",
   "rules": [
