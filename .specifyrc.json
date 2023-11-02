@@ -4,6 +4,17 @@
   "base": "main",
   "version": "2",
   "rules": [
+     {
+      "name": "Tailwind theme",
+      "parsers": [
+        {
+          "name": "to-tailwind",
+          "output": {
+            "type": "file",
+            "filePath": "theme.js"
+          }
+        }
+      ],
     {
       "name": "SDTF",
       "parsers": [
@@ -15,6 +26,9 @@
           }
         }
       ]
+    }
+  ]
+}
     }
   ]
 }
