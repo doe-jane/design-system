@@ -5,14 +5,14 @@
   "base": "main",
   "rules": [
     {
-      "name": "Generate tokens in CSS",
+      "name": "Generate colors in CSS",
       "parsers": [
         {
           "name": "filter",
           "options": {
             "query": {
               "where": {
-                "collection": "Colors",
+                "collection": "^Colors$",
                 "select": {
                   "parents": true,
                   "children": true
@@ -54,7 +54,191 @@
           "name": "to-css-custom-properties",
           "output": {
             "type": "file",
-            "filePath": "tokens.css"
+            "filePath": "output/colors.css"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Generate dimensions in CSS",
+      "parsers": [
+        {
+          "name": "filter",
+          "options": {
+            "query": {
+              "where": {
+                "collection": "^Dimensions$",
+                "select": {
+                  "parents": true,
+                  "children": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "names",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "modes",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "to-css-custom-properties",
+          "output": {
+            "type": "file",
+            "filePath": "output/spacings.css"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Generate text styles in CSS",
+      "parsers": [
+        {
+          "name": "filter",
+          "options": {
+            "query": {
+              "where": {
+                "group": "^Text styles$",
+                "select": {
+                  "parents": true,
+                  "children": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "names",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "modes",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "to-css-custom-properties",
+          "output": {
+            "type": "file",
+            "filePath": "output/text-styles.css"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Generate gradients in CSS",
+      "parsers": [
+        {
+          "name": "filter",
+          "options": {
+            "query": {
+              "where": {
+                "group": "^Color styles$",
+                "select": {
+                  "parents": true,
+                  "children": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "names",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "modes",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "to-css-custom-properties",
+          "output": {
+            "type": "file",
+            "filePath": "output/gradients.css"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Generate gradients in CSS",
+      "parsers": [
+        {
+          "name": "filter",
+          "options": {
+            "query": {
+              "where": {
+                "group": "^Effect styles$",
+                "select": {
+                  "parents": true,
+                  "children": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "names",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "modes",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "to-css-custom-properties",
+          "output": {
+            "type": "file",
+            "filePath": "output/shadows.css"
           }
         }
       ]
