@@ -5,13 +5,13 @@
   "version": "2",
   "rules": [
     {
-      "name": "SDTF",
+      "name": "Generate SVG files",
       "parsers": [
         {
-          "name": "to-sdtf",
+          "name": "to-svg-file",
           "output": {
-            "type": "file",
-            "filePath": "output/tokens.json"
+            "type": "directory",
+            "directoryPath": "output/assets"
           }
         }
       ]
