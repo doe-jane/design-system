@@ -8,12 +8,12 @@
       "name": "Generate SVG files",
       "parsers": [
         {
-          "name": "to-svg-file",
+          "name": "to-json",
           "output": {
-            "type": "directory",
-            "directoryPath": "output/assets"
+            "type": "file",
+            "filePath": "tokens.json"
           }
-        }
+        },
       ]
     }
   ]
