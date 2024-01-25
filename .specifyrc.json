@@ -8,7 +8,7 @@
       "name": "Generate SVG files",
       "parsers": [
         {
-          "name": "to-json",
+          "name": "to-sdtf",
           "output": {
             "type": "file",
             "filePath": "tokens.json"
