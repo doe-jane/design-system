@@ -1,8 +1,6 @@
 {
   "version": "2",
   "repository": "@acme-inc/all-design-data-v2",
-  "head": "specifyrc-json",
-  "base": "main",
   "rules": [
     {
       "name": "css",
