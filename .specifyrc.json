@@ -1,17 +1,111 @@
 {
+  "version": "2",
   "repository": "@acme-inc/all-design-data-v2",
   "head": "specifyrc-json",
   "base": "main",
-  "version": "2",
   "rules": [
     {
-      "name": "SDTF",
+      "name": "css",
       "parsers": [
         {
-          "name": "to-sdtf",
+          "name": "filter",
+          "options": {
+            "query": {
+              "where": {
+                "collection": "Colors",
+                "select": {
+                  "parents": true,
+                  "children": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "convert-color",
+          "options": {
+            "toFormat": "hsl",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "names",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "modes",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "to-css-custom-properties",
           "output": {
             "type": "file",
-            "filePath": "output/tokens.json"
+            "filePath": "tokens.css"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Optimize and transform vectors with svgo from a group named 'Vectors' + Generate SVG files",
+      "parsers": [
+        {
+          "name": "filter",
+          "options": {
+            "query": {
+              "where": {
+                "group": "^Vectors$",
+                "andWhere": {
+                  "token": ".*",
+                  "withTypes": {
+                    "include": [
+                      "vector"
+                    ]
+                  },
+                  "select": {
+                    "token": true,
+                    "parents": {
+                      "collections": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "svgo",
+          "output": {
+            "type": "directory",
+            "directoryPath": "output/assets"
+          },
+          "options": {
+            "svgo": {
+              "plugins": [
+                {
+                  "name": "removeDimensions"
+                },
+                {
+                  "name": "convertColors",
+                  "params": {
+                    "currentColor": true
+                  }
+                }
+              ]
+            }
           }
         }
       ]
