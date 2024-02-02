@@ -1,17 +1,84 @@
 {
-  "repository": "@acme-inc/all-design-data-v2",
-  "head": "specifyrc-json",
-  "base": "main",
   "version": "2",
+  "repository": "@acme-inc/all-design-data-v2",
   "rules": [
     {
-      "name": "SDTF",
+      "name": "To React Native",
+      "parsers": [
+        {
+          "name": "to-react-native",
+          "output": {
+            "type": "file",
+            "filePath": "tokens.ts"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Optimize and transform vectors with svgo from a group named 'Icons' + Generate SVG files",
+      "parsers": [
+        {
+          "name": "filter",
+          "options": {
+            "query": {
+              "where": {
+                "group": "^Icons$",
+                "andWhere": {
+                  "token": ".*",
+                  "withTypes": {
+                    "include": [
+                      "vector"
+                    ]
+                  },
+                  "select": {
+                    "token": true,
+                    "parents": {
+                      "collections": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "svgo",
+          "options": {
+            "svgo": {
+              "plugins": [
+                {
+                  "name": "removeDimensions"
+                },
+                {
+                  "name": "convertColors",
+                  "params": {
+                    "currentColor": true
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "svg-to-jsx",
+          "output": {
+            "type": "directory",
+            "directoryPath": "output/assets"
+          },
+          "options": {
+            "tsx": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Generate SDTF Token Graph",
       "parsers": [
         {
           "name": "to-sdtf",
           "output": {
             "type": "file",
-            "filePath": "output/tokens.json"
+            "filePath": "graph.json"
           }
         }
       ]
