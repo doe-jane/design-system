@@ -1,0 +1,3 @@
+export default () => (
+    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 6.5H9V5H11V6.5Z" fill="currentColor"/><path d="M13 6.5H15V5H13V6.5Z" fill="currentColor"/><path d="M13 9.5H15V8H13V9.5Z" fill="currentColor"/><path d="M15 12.5H13V11H15V12.5Z" fill="currentColor"/><path d="M15 15.5H13V14H15V15.5Z" fill="currentColor"/><path d="M6 4V9H4C2.89543 9 2 9.89543 2 11V18H18V4C18 2.89543 17.1046 2 16 2H8C6.89543 2 6 2.89543 6 4ZM16 3.5C16.2761 3.5 16.5 3.72386 16.5 4V16.5H12V11C12 10.2597 11.5978 9.61337 11 9.26756V8H9V9H7.5V4C7.5 3.72386 7.72386 3.5 8 3.5H16ZM6 12.5H4V11H6V12.5ZM8 11H10V12.5H8V11ZM8 15.5V14H10V15.5H8ZM4 15.5V14H6V15.5H4Z" fill="currentColor"/></svg>
+    );
