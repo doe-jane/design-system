@@ -1,17 +1,64 @@
 {
-  "repository": "@acme-inc/SDS",
+  "version": "2",
   "head": "specifyrc-json",
   "base": "main",
-  "version": "2",
+  "repository": "@acme-inc/SDS",
   "rules": [
     {
-      "name": "SDTF",
+      "name": "css",
       "parsers": [
         {
-          "name": "to-sdtf",
+          "name": "change-case",
+          "options": {
+            "change": "names",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "change-case",
+          "options": {
+            "change": "modes",
+            "toCase": "kebabCase",
+            "applyTo": {
+              "collection": true
+            }
+          }
+        },
+        {
+          "name": "to-css-custom-properties",
           "output": {
             "type": "file",
-            "filePath": "output/tokens.json"
+            "filePath": "tokens.css"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Optimize and transform vectors with svgo + Generate SVG files",
+      "parsers": [
+        {
+          "name": "svgo",
+          "output": {
+            "type": "directory",
+            "directoryPath": "output/assets"
+          },
+          "options": {
+            "svgo": {
+              "plugins": [
+                {
+                  "name": "removeDimensions"
+                },
+                {
+                  "name": "convertColors",
+                  "params": {
+                    "currentColor": true
+                  }
+                }
+              ]
+            }
           }
         }
       ]
