@@ -1,0 +1,32 @@
+{
+  "repository": "@acme-inc/all-design-data-v2",
+  "head": "specifyrc-json",
+  "base": "main",
+  "version": "2",
+  "rules": [
+    {
+      "name": "Generate tokens for Flutter",
+      "parsers": [
+        {
+          "name": "to-flutter",
+          "output": {
+            "type": "file",
+            "filePath": "public/tokens.dart"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Optimize and generate icons as SVG files",
+      "parsers": [
+        {
+          "name": "svgo",
+          "output": {
+            "type": "directory",
+            "directoryPath": "public/vectors"
+          }
+        }
+      ]
+    }
+  ]
+}
