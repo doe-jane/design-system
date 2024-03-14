@@ -5,13 +5,25 @@
   "version": "2",
   "rules": [
     {
-      "name": "SDTF",
+      "name": "Generate tokens for Flutter",
       "parsers": [
         {
-          "name": "to-sdtf",
+          "name": "to-flutter",
           "output": {
             "type": "file",
-            "filePath": "output/tokens.json"
+            "filePath": "public/tokens.dart"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Optimize and generate icons as SVG files",
+      "parsers": [
+        {
+          "name": "svgo",
+          "output": {
+            "type": "directory",
+            "directoryPath": "public/vectors"
           }
         }
       ]
